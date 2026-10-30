@@ -1,0 +1,2 @@
+# Prevent direct web access to database import files.
+Deny from all

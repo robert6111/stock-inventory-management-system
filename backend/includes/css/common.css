@@ -1,0 +1,201 @@
+@import url("responsive-fixes.css");
+.content-page {
+    margin-left: 240px;
+    padding: 80px 20px 20px 20px;
+    min-height: 100vh;
+    background: #f4f6f9;
+    transition: margin-left 0.3s ease;
+}
+
+
+
+/* Sidebar */
+.left.side-menu {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #2f3542;
+    color: #fff;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar-inner {
+    padding-top: 60px; /* leave space for header */
+}
+
+
+.footer p{
+    text-align: center;
+}
+#sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar-menu .menu-title {
+    padding: 12px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #a4b0be;
+    letter-spacing: 1px;
+}
+
+#sidebar-menu ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #dcdde1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+#sidebar-menu ul li a:hover,
+#sidebar-menu ul li.active > a {
+    background: #1e272e;
+    color: #fff;
+}
+
+/* Submenus */
+#sidebar-menu ul li ul {
+    display: none;
+    background: #353b48;
+}
+#sidebar-menu ul li ul li a {
+    padding: 10px 40px;
+    font-size: 13px;
+    color: #c8d6e5;
+}
+#sidebar-menu ul li ul li a:hover {
+    background: #2f3640;
+    color: #fff;
+}
+#sidebar-menu ul li.has_sub:hover > ul {
+    display: block;
+}
+
+/* Scrollbar */
+.left.side-menu::-webkit-scrollbar { width: 6px; }
+.left.side-menu::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }
+.left.side-menu::-webkit-scrollbar-track { background: #2f3542; }
+
+
+
+@media (max-width: 768px) {
+    .table thead {
+        display: none; /* Hide table headers */
+    }
+
+    .table, 
+    .table tbody, 
+    .table tr, 
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 8px;
+        background: #fff;
+    }
+
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+        color: #333;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+    .left.side-menu {
+        transform: translateX(-100%);
+        position: fixed;
+    }
+    .left.side-menu.active {
+        transform: translateX(0);
+    }
+    .content-page {
+        margin-left: 0;
+        padding: 80px 15px 20px 15px;
+    }
+    .topbar-left .logo {
+        font-size: 18px;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 576px) {
+    .topbar {
+        padding: 0 10px;
+    }
+    .profile-dropdown .profile-name {
+        display: none; /* hide text, keep only avatar */
+    }
+    .card-box {
+        padding: 15px;
+    }
+    .table th, .table td {
+        padding: 8px;
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   FIX HAMBURGER MENU
+========================= */
+
+@media (max-width: 992px) {
+    .mobile-menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+
+        background: transparent !important;
+        border: none !important;
+        color: #fff !important;
+
+        font-size: 24px !important;
+        cursor: pointer !important;
+
+        position: relative !important;
+        z-index: 2000 !important;
+    }
+
+    .topbar {
+        justify-content: flex-start !important;
+        gap: 10px !important;
+    }
+
+    .topbar-left {
+        flex: 1 !important;
+    }
+
+    .topbar-right {
+        margin-left: auto !important;
+    }
+}
+

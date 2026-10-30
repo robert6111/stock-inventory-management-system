@@ -1,0 +1,315 @@
+/* Reset and body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    overflow-x: hidden;
+}
+
+
+/* Main content */
+.content-page {
+    margin-left: 240px;
+    padding: 80px 20px 20px 20px;
+    min-height: 100vh;
+    background: #f4f6f9;
+    transition: margin-left 0.3s ease;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+.container-fluid1{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px ;
+}
+/* Cards */
+.card-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+.card-box:hover { transform: translateY(-3px); }
+
+/* Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.table th {
+    background: #2c3e50;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.table tr:hover { background: #f1f1f1; }
+
+
+/* ========================= */
+/* RESPONSIVENESS */
+/* ========================= */
+
+
+
+/* General table responsiveness */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Smaller devices: make table rows more compact */
+/* Dashboard low stock alert */
+.dashboard-low-stock-alert {
+    width: 100%;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 6px solid #f97316;
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 18px 0 24px 0;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    color: #7c2d12;
+    position: relative;
+    z-index: 1;
+}
+
+.low-stock-alert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.low-stock-title-area strong {
+    display: block;
+    font-size: 18px;
+    color: #9a3412;
+    margin-bottom: 4px;
+}
+
+.low-stock-title-area p {
+    margin: 0;
+    font-size: 14px;
+    color: #9a3412;
+}
+
+.low-stock-view-btn {
+    background: #f97316;
+    color: #ffffff;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.low-stock-view-btn:hover {
+    background: #ea580c;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.low-stock-alert-list {
+    display: grid;
+    gap: 10px;
+}
+
+.low-stock-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    background: #ffffff;
+    border: 1px solid #ffedd5;
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+
+.low-stock-product-info strong {
+    display: block;
+    color: #111827;
+    font-size: 15px;
+}
+
+.low-stock-product-info span {
+    display: block;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.low-stock-qty {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 7px 11px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.low-stock-note {
+    display: block;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    margin: 8px 12px 12px;
+    line-height: 1.4;
+}
+
+/* Mobile and tablet */
+@media (max-width: 768px) {
+    .dashboard-low-stock-alert {
+        padding: 16px;
+        margin-top: 14px;
+        margin-bottom: 20px;
+    }
+
+    .low-stock-alert-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .low-stock-view-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .low-stock-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .low-stock-qty {
+        align-self: flex-start;
+    }
+}
+
+/* Customer-ready low stock alert used by dashboard.php */
+.stock-dashboard-alert {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 6px solid #f97316;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 0 0 22px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    color: #7c2d12;
+    width: 100%;
+    clear: both;
+}
+
+.stock-dashboard-alert-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.stock-dashboard-alert-top strong {
+    display: block;
+    font-size: 18px;
+    color: #9a3412;
+}
+
+.stock-dashboard-alert-top p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #9a3412;
+}
+
+.stock-dashboard-alert-top a {
+    background: #f97316;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.stock-dashboard-alert-top a:hover {
+    background: #ea580c;
+    color: #fff;
+}
+
+.stock-dashboard-alert-items {
+    display: grid;
+    gap: 8px;
+}
+
+.stock-dashboard-alert-item {
+    background: #fff;
+    border: 1px solid #ffedd5;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.stock-dashboard-alert-item b {
+    display: block;
+    color: #222;
+    font-size: 15px;
+}
+
+.stock-dashboard-alert-item span {
+    display: block;
+    margin-top: 3px;
+    color: #666;
+    font-size: 13px;
+}
+
+.stock-dashboard-alert-item em {
+    background: #fee2e2;
+    color: #991b1b;
+    font-style: normal;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .stock-dashboard-alert-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stock-dashboard-alert-top a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .stock-dashboard-alert-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stock-dashboard-alert-item em {
+        align-self: flex-start;
+    }
+}

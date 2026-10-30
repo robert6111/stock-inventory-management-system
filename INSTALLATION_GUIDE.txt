@@ -1,0 +1,124 @@
+STOCK INVENTORY MANAGEMENT SYSTEM - INSTALLATION GUIDE
+======================================================
+
+Copyright (c) 2026 Robert. All rights reserved.
+Source published for portfolio review only. See LICENSE.txt for the
+licence terms. Copying, redistribution or modification without the owner's
+written permission is not allowed.
+
+
+REQUIREMENTS
+------------
+- Windows computer
+- XAMPP with PHP 8.0 or newer (includes Apache, MariaDB/MySQL and phpMyAdmin)
+  Download: https://www.apachefriends.org
+
+
+STEP 1 - INSTALL AND START XAMPP
+--------------------------------
+1. Install XAMPP to the default folder: C:\xampp
+2. Open the XAMPP Control Panel.
+3. Click "Start" next to Apache and next to MySQL. Both must show green.
+
+
+STEP 2 - COPY THE SYSTEM FILES
+------------------------------
+1. Extract the zip file.
+2. Copy the folder "stock-inventory-management-system" into C:\xampp\htdocs\
+   The result must be exactly:
+       C:\xampp\htdocs\stock-inventory-management-system\backend\...
+
+   IMPORTANT: Do not rename the folder. The system expects this exact name.
+
+
+STEP 3 - CREATE THE DATABASE
+----------------------------
+1. Open a browser and go to:  http://localhost/phpmyadmin
+2. Click "New" on the left.
+3. Database name:  stock_management_system
+   Collation:      utf8mb4_general_ci
+   Click "Create".
+4. Select the new database, open the "Import" tab.
+5. Choose the file:
+       C:\xampp\htdocs\stock-inventory-management-system\backend\database\stock_management_system.sql
+6. Click "Import" (at the bottom). Wait for the green success message.
+
+The database starts empty: no products, customers, sales or stock.
+Product categories, units and the "Main Store" warehouse are included.
+
+
+STEP 4 - FIRST LOGIN AND CREATING THE REAL ADMIN
+-----------------------------------------------
+1. Go to:  http://localhost/stock-inventory-management-system/backend/authentication/login.php
+   (Bookmark this page.)
+2. Log in with the temporary setup account:
+       Email:    setup@stockmanager.local
+       Password: SetupAdmin@2026!
+3. In the left menu open Manage Users > Add User. Create the real administrator account
+   (Role: Admin, Status: Active). Use a strong password of at least 8 characters.
+4. After saving, the temporary setup account is disabled automatically
+   and you are returned to the login page.
+5. Log in with the real admin account you just created.
+
+RECOMMENDED: Create a SECOND admin account (Manage Users > Add User).
+If one admin forgets their password, the other admin can reset it.
+
+
+DAILY USE
+---------
+- Start Apache and MySQL in the XAMPP Control Panel before using the system.
+- Users are logged out automatically after 10 minutes of inactivity.
+- User roles:
+    Admin   - everything, including Users, Backups and Sales Reports
+    Manager - Products, Stock, Sales and Customers
+    Staff   - Sales and Customers only
+
+
+FORGOTTEN PASSWORDS
+-------------------
+- Users cannot reset their own password from the login page.
+- An admin resets passwords in: Manage Users > type a new password in
+  "New password optional" on that user's row > Save.
+
+- If NO admin can log in, reset an admin password on the computer running XAMPP:
+  1. Open "Command Prompt".
+  2. Run (replace the email with the admin's email):
+
+     C:\xampp\php\php.exe C:\xampp\htdocs\stock-inventory-management-system\tools\reset_password_cli.php admin@example.com
+
+  3. Type the new password twice when asked.
+  This tool only works on the computer itself, not from a browser.
+
+
+BACKUPS
+-------
+- A database backup is created automatically once per day, the first time
+  someone opens the Dashboard that day.
+- Admins can also click "Backup Now" in Database Backups, and download backups there.
+- Backups are stored in:
+      C:\xampp\htdocs\stock-inventory-management-system\backend\backups\
+- If the OneDrive desktop app is installed and signed in on this computer,
+  backups are also copied to OneDrive automatically. See
+  backend\backup\README_BACKUP.txt for OneDrive settings and troubleshooting.
+- The latest 30 backups are kept; older ones are deleted automatically.
+
+To restore a backup: open phpMyAdmin, select the stock_management_system
+database, open "Import" and choose the backup .sql file.
+
+
+DATABASE CONNECTION SETTINGS
+----------------------------
+The system uses the XAMPP default MySQL login (user "root", no password).
+If you set a MySQL password, update it in:
+    C:\xampp\htdocs\stock-inventory-management-system\backend\includes\db.php
+
+
+TROUBLESHOOTING
+---------------
+- "Database connection failed": MySQL is not started in XAMPP, or the database
+  was not created/imported (Step 3), or the password in db.php is wrong.
+- Page not found (404): check the folder name and location in Step 2.
+- "Security check failed": the page was open too long. Go back, refresh the page
+  and try again.
+- Pages look unstyled or icons are missing: some icons load from the internet;
+  the system still works without an internet connection.

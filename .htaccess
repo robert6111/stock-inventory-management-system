@@ -1,0 +1,4 @@
+# Hide installation notes, licence and dependency files from the browser.
+<FilesMatch "\.(txt|md|json|lock)$">
+    Require all denied
+</FilesMatch>

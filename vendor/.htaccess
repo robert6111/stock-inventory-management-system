@@ -1,0 +1,2 @@
+# The PHP libraries in this folder are loaded by the application only.
+Require all denied

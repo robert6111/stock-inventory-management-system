@@ -1,0 +1,8 @@
+# Backups contain business data and are never committed
+backend/backups/*
+!backend/backups/.htaccess
+!backend/backups/index.html
+*.log
+.env
+.git_backup/
+.DS_Store

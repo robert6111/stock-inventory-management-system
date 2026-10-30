@@ -1,0 +1,5 @@
+# Protect internal PHP/include files, but allow CSS, JS, images, fonts, and other frontend assets.
+# The previous full folder block could break styling because this project stores CSS/JS/images under backend/includes/.
+<FilesMatch "\.(php|inc|phtml|log|sql|bak)$">
+    Require all denied
+</FilesMatch>

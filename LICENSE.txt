@@ -1,0 +1,9 @@
+Copyright (c) 2026 Robert Baraka Kunenga. All rights reserved.
+
+This source code is published for portfolio and academic review only.
+You may read it. You may not copy, use, modify or distribute it, in whole or
+in part, without the author's written permission.
+
+Third-party components keep their own licences:
+- PHPMailer (backend/PHPMailer): LGPL 2.1
+- FPDF (backend/includes/fpdf) and setasign FPDF/FPDI (vendor): see their licence files

@@ -1,0 +1,31 @@
+TEMPORARY FIRST LOGIN
+======================
+
+Use this temporary account only after importing the included clean database:
+
+Email: setup@stockmanager.local
+Password: SetupAdmin@2026!
+
+Important:
+1. Login with this temporary account first.
+2. Open Manage Users.
+3. Create the real customer/admin user.
+4. The temporary setup account is disabled automatically.
+5. Login using the real admin user.
+
+Database state:
+- No products.
+- No customers.
+- No sales.
+- No stock quantities.
+- No suppliers.
+- Original categories from your phpMyAdmin database are included.
+- Original units from your phpMyAdmin database are included.
+- Main Store warehouse is included.
+- One temporary setup admin is included only so the system can be opened.
+
+Notes:
+- This package does not use admin/admin or admin@admin style credentials.
+- The temporary password in the database is securely hashed using PHP password_hash().
+
+If login refuses after importing into an already-existing database, import the clean database again into an empty stock_management_system database.

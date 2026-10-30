@@ -1,0 +1,294 @@
+/* =========================
+   HEADER / TOPBAR
+========================= */
+
+.topbar {
+    width: 100%;
+    height: 70px;
+    background-color: #2f3542;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    position: relative;
+    z-index: 999;
+}
+
+/* Mobile menu button */
+.mobile-menu-toggle {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    margin-right: 12px;
+}
+
+/* Left side logo area */
+.topbar-left {
+    height: 70px;
+    width: 160px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    overflow: hidden;
+}
+
+/* Logo clickable link */
+.topbar-left .logo {
+    width: 160px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-decoration: none;
+    overflow: hidden;
+}
+
+/* Logo image */
+.topbar-left .logo img {
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 155px !important;
+    max-height: 55px !important;
+
+    object-fit: contain !important;
+    object-position: left center;
+
+    display: block !important;
+}
+
+/* Right side */
+.topbar-right {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Profile dropdown */
+.profile-dropdown {
+    height: 70px;
+    position: relative;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Profile icon */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    margin-right: 8px;
+
+    font-size: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Profile name */
+.profile-name {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 65px;
+    right: 0;
+
+    background: #fff;
+    color: #333;
+
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+
+    display: none;
+    min-width: 170px;
+    overflow: hidden;
+
+    z-index: 1000;
+}
+
+/* Dropdown links */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+
+    text-decoration: none;
+    color: #333;
+
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background: #f0f0f0;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+    .topbar {
+        height: 65px;
+        padding: 0 12px;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .topbar-left {
+        height: 65px;
+        width: 140px;
+        flex: 1;
+    }
+
+    .topbar-left .logo {
+        width: 140px;
+        height: 55px;
+    }
+
+    .topbar-left .logo img {
+        max-width: 705px !important;
+        max-height: 50px !important;
+    }
+
+    .topbar-right {
+        height: 65px;
+    }
+
+    .profile-dropdown {
+        height: 65px;
+    }
+
+    .profile-name {
+        display: none;
+    }
+
+    .dropdown-menu {
+        top: 60px;
+        right: 0;
+    }
+}
+/* =========================
+   FINAL LOGO FIX
+   This prevents the logo from covering the page
+========================= */
+
+header.topbar {
+    height: 70px !important;
+    overflow: hidden !important;
+}
+
+header.topbar .topbar-left {
+    width: 160px !important;
+    height: 70px !important;
+    max-width: 160px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    overflow: hidden !important;
+    flex: 0 0 160px !important;
+}
+
+header.topbar .topbar-left a.logo {
+    width: 160px !important;
+    height: 70px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    overflow: hidden !important;
+    text-decoration: none !important;
+}
+
+/* The actual logo image */
+header.topbar .topbar-left a.logo img.topbar-logo-img {
+    position: static !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 150px !important;
+    max-height: 55px !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    object-fit: contain !important;
+    object-position: left center !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
+}
+
+/* Final dropdown and hamburger visibility correction */
+header.topbar,
+.topbar {
+    overflow: visible !important;
+    z-index: 5000 !important;
+}
+
+.profile-dropdown {
+    z-index: 5100 !important;
+}
+
+.dropdown-menu,
+#profileMenu {
+    z-index: 5200 !important;
+}
+
+.hamburger-icon {
+    display: inline-block;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 1199px) {
+    #mobileMenuToggle.mobile-menu-toggle,
+    .mobile-menu-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        border-radius: 10px !important;
+        background: rgba(255,255,255,0.16) !important;
+        z-index: 5300 !important;
+    }
+}
